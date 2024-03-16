@@ -16,8 +16,6 @@ wss.on('connection', function connection(ws) {
 
   // Event listener for when the server receives a message from a client
   ws.on('message', function incoming(message,isBinary) {
-    console.log('Received: %s', JSON.parse(message));
-    console.log(isBinary)
     // Loop through all clients
     clients.forEach(client => {
       // Send the message to all clients except the one that sent the message
